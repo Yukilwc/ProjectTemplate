@@ -1,6 +1,4 @@
-# templete
-
-vue cli3生成的vue2.0工程模板
+# vue-3
 
 ## Project setup
 ```
