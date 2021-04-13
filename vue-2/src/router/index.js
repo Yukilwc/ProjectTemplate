@@ -1,26 +1,34 @@
+/*
+ * @Author: 李文超
+ * @Date: 2021-04-12 16:52:42
+ * @LastEditors: 李文超
+ * @LastEditTime: 2021-04-13 10:38:09
+ * @Description: file content
+ * @FilePath: \pkuWeb\src\router\index.js
+ */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Main from '../pages/main.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'main',
+    component: Main
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/Main',
+    name: 'main',
+    component: Main
   }
 ]
 
 const router = new VueRouter({
+  scrollBehavior: () => ({
+    y: 0
+  }),
   routes
 })
 
