@@ -1,4 +1,4 @@
-# vue-3-ts
+# vue3-ts-vuecli
 
 ## Project setup
 ```
