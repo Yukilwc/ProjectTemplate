@@ -1,6 +1,6 @@
 // 用来验证用户身份是否失效
 import Cookies from 'js-cookie'
-const TokenKey = 'AUTH-HXY-TRADE-TOKEN'
+const TokenKey = ''
 
 export function getToken() {
   // let cookies = Cookies.get(TokenKey)
