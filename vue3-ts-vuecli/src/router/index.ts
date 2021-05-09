@@ -1,4 +1,3 @@
-import { defineAsyncComponent } from 'vue'
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 
@@ -19,12 +18,12 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/swiper',
     name: 'swiper',
-    component: defineAsyncComponent(() => import('@/views/swiper.vue'))
+    component: () => import('@/views/swiper.vue')
   },
   {
-    path: '',
-    name: '',
-    component: defineAsyncComponent(() => import('@/views/animate.vue'))
+    path: '/animate',
+    name: 'animate',
+    component: () => import('@/views/animate.vue')
   },
 ]
 
