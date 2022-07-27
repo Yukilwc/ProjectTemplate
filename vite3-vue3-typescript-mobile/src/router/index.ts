@@ -1,24 +1,31 @@
+
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
-
-// TODO: 参数类型扩展
-
-// TODO: 路由守卫
-
-// TODO: 页面内监听路有变化
-
 const routes: RouteRecordRaw[] = [
   {
     path: "/",
     component: () => import("@/pages/home/index.vue"),
+    meta: {
+      showNavbar: true,
+    },
   },
   {
     path: "/second",
     component: () => import("@/pages/second/index.vue"),
+    meta: {
+      showNavbar: false,
+    },
   },
   {
+    path: "/router",
+    component: () => import("@/pages/router/index.vue"),
+    meta: {
+      showNavbar: false,
+    },
+  },
+ 
+  {
     path: "/:pathMatch(.*)*",
-    redirect:'/',
-    // component: () => import("@/pages/home/index.vue"),
+    redirect: "/",
   },
 ];
 
@@ -32,6 +39,4 @@ const router = createRouter({
   },
 });
 
-export {
-    router
-}
+export { router };
