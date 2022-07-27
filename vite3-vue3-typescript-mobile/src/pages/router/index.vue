@@ -5,9 +5,11 @@
 </template>
 
 <script lang='ts' setup>
-import { useRouter } from 'vue-router';
+import { watch } from 'vue';
+import { useRoute, useRouter } from 'vue-router';
 
 const router = useRouter()
+const route = useRoute()
 const routeTo = () => {
     router.push({
         path: '/router',
@@ -16,6 +18,10 @@ const routeTo = () => {
         }
     })
 }
+watch(() => route.query, (n, o) => {
+    console.log('==========query change',n,o)
+})
+
 </script>
 
 <style scoped lang="scss">
