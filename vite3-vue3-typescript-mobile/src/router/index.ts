@@ -22,7 +22,10 @@ const routes: RouteRecordRaw[] = [
       showNavbar: false,
     },
   },
- 
+ {
+    path: "/pinia",
+    component: () => import("@/pages/pinia/index.vue"),
+  },
   {
     path: "/:pathMatch(.*)*",
     redirect: "/",
