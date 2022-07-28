@@ -17,20 +17,16 @@ export function useAxios() {
   const jsonPost = async <R>(url: string, data: any) => {
     const config: AxiosRequestConfig = {
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json;charset=UTF-8",
         sys_source: "",
         Authorization: userStore.token || "",
       },
     };
-    // try {
     let res = await instance.post<R>(url, data, config);
     return res.data;
-    // } catch (e) {
-    //   console.error(e);
-    //   return e as R;
-    // }
   };
   return {
     jsonPost,
+    initAxios,
   };
 }

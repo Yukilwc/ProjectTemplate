@@ -9,7 +9,6 @@
 import { API } from "@/api";
 import { ListRes } from "@/model/response/ListRes";
 import { useAxios } from "@/utils/useAxios";
-import { AxiosError } from "axios";
 let { jsonPost } = useAxios();
 const postClick = async () => {
   try {
