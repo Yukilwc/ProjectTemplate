@@ -12,7 +12,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       vue(),
       Components({
-        dirs: ['src/components'],
+        dirs: ['src/unpluginComponents'],
         dts: true,
         resolvers: [VantResolver()],
       }),
