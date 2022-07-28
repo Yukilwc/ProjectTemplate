@@ -17,6 +17,6 @@ export const useProfileStore = defineStore("profile", () => {
     navbarInfo,
     navbarHeight,
     themeColor,
-    changeTheme
+    changeTheme,
   };
 });

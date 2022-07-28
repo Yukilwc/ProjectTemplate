@@ -1,4 +1,3 @@
-
 import { createRouter, createWebHashHistory, RouteRecordRaw } from "vue-router";
 const routes: RouteRecordRaw[] = [
   {
@@ -22,9 +21,13 @@ const routes: RouteRecordRaw[] = [
       showNavbar: false,
     },
   },
- {
+  {
     path: "/pinia",
     component: () => import("@/pages/pinia/index.vue"),
+  },
+  {
+    path: "/axios",
+    component: () => import("@/pages/axios/index.vue"),
   },
   {
     path: "/:pathMatch(.*)*",
