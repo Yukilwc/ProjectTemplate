@@ -3,9 +3,6 @@
 import { Plugin, App } from 'vue'
 // import { useMiddlewares } from '@/middlewares/useMiddlewares'
 // import { isMobile } from '@/middlewares/device'
-
-
-
 const registerFunctions: Plugin = {
     install: (app: App, options) => {
         console.log('==========  registerFunctions插件安装',)

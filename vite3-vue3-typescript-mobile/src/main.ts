@@ -12,11 +12,15 @@ const pinia = createPinia();
 const { initPermission } = usePermission();
 initPermission(router);
 
+// ============================================================ 样式 START
+import "@/style/coverVant";
+// ============================================================ 样式 END
+
 const app = createApp(App);
 app.use(router);
 app.use(pinia);
 const userStore = useUserStore();
 userStore.loadUserInfoFromBrowser();
-app.use(registerFunctions)
-app.use(registerComponents)
+app.use(registerFunctions);
+app.use(registerComponents);
 app.mount("#app");

@@ -2,6 +2,7 @@ import { defineConfig, loadEnv } from "vite";
 import vue from "@vitejs/plugin-vue";
 import path from "path";
 import Components from "unplugin-vue-components/vite";
+import AutoImport from "unplugin-auto-import/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
@@ -11,8 +12,21 @@ export default defineConfig(({ command, mode }) => {
   return {
     plugins: [
       vue(),
+      AutoImport({
+        imports: [
+          "vue",
+          "vue-router",
+          // "@vueuse/core",
+          // {
+            // "@/utils/http": ["httpClient"],
+            // "@/utils/tools": ["toEnquiry"]
+          // },
+        ],
+        // resolvers: [ElementPlusResolver()],
+      }),
+
       Components({
-        dirs: ['src/unpluginComponents'],
+        dirs: ["src/unpluginComponents"],
         dts: true,
         resolvers: [VantResolver()],
       }),
