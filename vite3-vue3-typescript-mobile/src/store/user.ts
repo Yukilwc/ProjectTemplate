@@ -19,6 +19,9 @@ export const useUserStore = defineStore("user", {
     loginByPw() {
       this.name = "name";
       this.token = "123456";
+      this.state2Cookies();
+    },
+    state2Cookies() {
       cookies.set(USER_STATE_TOKEN_KEY, this.token, {
         expires: new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000),
       });
@@ -33,6 +36,9 @@ export const useUserStore = defineStore("user", {
       }
       console.log("==========loadUserInfoFromBrowser", userStateJson);
     },
-    logout() {},
+    logout() {
+      this.$reset();
+      this.state2Cookies();
+    },
   },
 });
