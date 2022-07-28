@@ -1,7 +1,7 @@
 <template>
   <div>首页</div>
   <div class=''>
-    <GlobalTest></GlobalTest>
+    <GlobalTest msg="test" :labels="[]"></GlobalTest>
   </div>
 </template>
 
