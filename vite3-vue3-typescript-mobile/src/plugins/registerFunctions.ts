@@ -14,7 +14,7 @@ const registerFunctions: Plugin = {
         // app.provide("byId",()=>{
         //     return 'byId'
         // })
-        // app.config.globalProperties.$toEnquiry = toEnquiry
+        app.config.globalProperties.$globalUrl= 'global url'
     }
 
 }

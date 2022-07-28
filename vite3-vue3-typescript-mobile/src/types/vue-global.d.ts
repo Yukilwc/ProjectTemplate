@@ -1,7 +1,7 @@
 // import { toEnquiry } from '@/utils/tools'
-declare module "vue" {
+declare module "@vue/runtime-core" {
     interface ComponentCustomProperties {
-        // $toEnquiry: typeof toEnquiry
+        $globalUrl: string 
         // $popperOptions: typeof import("@/plugins/registerFunctions")['popperOptions']
     }
 }
