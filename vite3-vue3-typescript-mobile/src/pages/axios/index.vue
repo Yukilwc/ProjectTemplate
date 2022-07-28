@@ -17,7 +17,8 @@ const postClick = async () => {
     if (res.code === 1) {
       return true;
     } else return false;
-  } catch (e:any) {
+  } catch (e: any) {
+    console.error(e);
   }
 };
 </script>
