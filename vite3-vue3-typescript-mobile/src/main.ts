@@ -6,6 +6,7 @@ import { usePermission } from "./usePermission";
 import { createPinia } from "pinia";
 import { useUserStore } from "./store/user";
 import { registerFunctions } from "./plugins/registerFunctions";
+import { registerComponents } from "./plugins/registerComponents";
 const pinia = createPinia();
 
 const { initPermission } = usePermission();
@@ -17,4 +18,5 @@ app.use(pinia);
 const userStore = useUserStore();
 userStore.loadUserInfoFromBrowser();
 app.use(registerFunctions)
+app.use(registerComponents)
 app.mount("#app");

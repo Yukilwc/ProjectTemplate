@@ -1,5 +1,8 @@
 <template>
   <div>首页</div>
+  <div class=''>
+    <GlobalTest></GlobalTest>
+  </div>
 </template>
 
 <script lang='ts' setup>
