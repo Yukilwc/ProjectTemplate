@@ -3,6 +3,9 @@
   <div class=''>
     <GlobalTest :msg="$globalUrl" :labels="[]"></GlobalTest>
   </div>
+  <div class=''>
+    <van-button type="primary">van</van-button>
+  </div>
 </template>
 
 <script lang='ts' setup>
