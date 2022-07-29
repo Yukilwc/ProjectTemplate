@@ -5,6 +5,7 @@ import path from "path";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
+import autoprefixer from "autoprefixer"
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -46,6 +47,7 @@ export default defineConfig(({ command, mode }) => {
     css: {
       postcss: {
         plugins: [
+          autoprefixer(),
           pxtorem({
             rootValue: 37.5,
             // unitPrecision: 2,

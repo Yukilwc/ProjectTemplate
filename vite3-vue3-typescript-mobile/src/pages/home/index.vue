@@ -8,10 +8,11 @@
       <van-button type="primary" @click="toastClick">van</van-button>
     </div>
     <p>刷新次数: {{ count }}</p>
-    <div class='auto-prefixer'>
+    <div class="auto-prefixer">
       样式自动补全
+      <input placeholder="请输入样式" />
     </div>
-    <div class='px-2-rem'>rem转换</div>
+    <div class="px-2-rem">rem转换</div>
   </van-pull-refresh>
 </template>
 
@@ -38,6 +39,9 @@ const toastClick = () => {
 .auto-prefixer {
   transform: translateX(30px);
   filter: blur(1px);
+  input::placeholder {
+    color: gray;
+  }
 }
 .px-2-rem {
   width: 100px;

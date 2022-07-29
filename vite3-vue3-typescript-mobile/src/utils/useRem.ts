@@ -1,7 +1,7 @@
 import { useWindowSize } from "@vant/use";
 
 export function useRem() {
-  let rootValue = 16; // 插件配置的基数
+  let rootValue = 37.5; // 插件配置的基数
   let blueprintSize = 375; // 基于得设计图尺寸
   const { width } = useWindowSize();
   const setRemSize = () => {
