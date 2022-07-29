@@ -11,10 +11,10 @@ import { useRem } from "./utils/useRem";
 
 const { initPermission } = usePermission();
 initPermission(router);
+// ============================================================ 样式 START
 const { initRem } = useRem();
 initRem();
-// ============================================================ 样式 START
-import "@/style/coverVant";
+import "@/style/vant/coverVant";
 // ============================================================ 样式 END
 
 const app = createApp(App);

@@ -9,5 +9,6 @@ import "vant/es/notify/style";
 
 // ImagePreview
 import "vant/es/image-preview/style";
+import "./coverVantCss.css";
 
 export {};
