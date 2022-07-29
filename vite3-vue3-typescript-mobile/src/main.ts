@@ -7,11 +7,13 @@ import { createPinia } from "pinia";
 import { useUserStore } from "./store/user";
 import { registerFunctions } from "./plugins/registerFunctions";
 import { registerComponents } from "./plugins/registerComponents";
+import { useRem } from "./utils/useRem";
 const pinia = createPinia();
 
 const { initPermission } = usePermission();
 initPermission(router);
-
+const { initRem } = useRem();
+initRem();
 // ============================================================ 样式 START
 import "@/style/coverVant";
 // ============================================================ 样式 END
