@@ -8,7 +8,6 @@ import { useUserStore } from "./store/user";
 import { registerFunctions } from "./plugins/registerFunctions";
 import { registerComponents } from "./plugins/registerComponents";
 import { useRem } from "./utils/useRem";
-const pinia = createPinia();
 
 const { initPermission } = usePermission();
 initPermission(router);
@@ -20,7 +19,11 @@ import "@/style/coverVant";
 
 const app = createApp(App);
 app.use(router);
+
+// ============================================================ pinia全局状态 START
+const pinia = createPinia();
 app.use(pinia);
+// ============================================================ pinia全局状态 END
 const userStore = useUserStore();
 userStore.loadUserInfoFromBrowser();
 app.use(registerFunctions);

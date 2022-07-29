@@ -3,8 +3,8 @@ import { useWindowSize } from "@vant/use";
 export function useRem() {
   let rootValue = 16; // 插件配置的基数
   let blueprintSize = 375; // 基于得设计图尺寸
+  const { width } = useWindowSize();
   const setRemSize = () => {
-    const { width } = useWindowSize();
     // let viewWidth =
     //   window.innerWidth ||
     //   document.documentElement.clientWidth ||
@@ -17,7 +17,10 @@ export function useRem() {
   };
   const initRem = () => {
     setRemSize();
-    window.addEventListener("resize", () => {
+    // window.addEventListener("resize", () => {
+    //   setRemSize();
+    // });
+    watch(width, () => {
       setRemSize();
     });
   };
