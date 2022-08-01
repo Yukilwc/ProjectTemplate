@@ -30,6 +30,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import("@/pages/axios/index.vue"),
   },
   {
+    path: "/iframe",
+    component: () => import("@/pages/iframe/index.vue"),
+  },
+ 
+  {
     path: "/:pathMatch(.*)*",
     redirect: "/",
   },

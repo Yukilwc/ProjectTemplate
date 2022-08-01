@@ -5,7 +5,7 @@ import path from "path";
 import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
-import autoprefixer from "autoprefixer"
+import autoprefixer from "autoprefixer";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
@@ -70,6 +70,13 @@ export default defineConfig(({ command, mode }) => {
             // exclude: /^((?!mobile).)+$|(node_modules)/gi,
           }),
         ],
+      },
+      preprocessorOptions: {
+        scss: {
+          additionalData: `@use '@/style/tools.scss' as *;`, // 添加公共样式
+          // charset: false,
+        },
+        // css: { charset: false }, // 解决 warning: "@charset" must be the first rule in the file
       },
     },
   };

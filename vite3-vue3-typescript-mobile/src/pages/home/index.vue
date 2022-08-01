@@ -13,6 +13,9 @@
       <input placeholder="请输入样式" />
     </div>
     <div class="px-2-rem">rem转换</div>
+    <div class="">
+      <button class="global-tool-btn">全局工具样式导入</button>
+    </div>
   </van-pull-refresh>
 </template>
 
@@ -51,5 +54,9 @@ const toastClick = () => {
   align-items: center;
   justify-content: center;
   border: 1px solid gray;
+}
+.global-tool-btn {
+  @include rmBtn();
+  @include gradientBtn();
 }
 </style>
