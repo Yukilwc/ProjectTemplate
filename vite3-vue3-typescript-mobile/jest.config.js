@@ -1,7 +1,7 @@
-module.exports = {
+export default {
     moduleFileExtensions: ["js", "json", "jsx", "ts", "tsx", "node", "vue"],
     transform: {
-        "^.+\\.vue$": "vue-jest",
+        "^.+\\.vue$": "@vue/vue3-jest",
         "^.+\\.ts$": "ts-jest",
         "^.+\\.js$": "babel-jest",
         "^.+\\.[jt]sx?$": "babel-jest",
@@ -14,6 +14,11 @@ module.exports = {
     },
     snapshotSerializers: ['jest-serializer-vue'],
     testEnvironment: 'jsdom',
-    globals: {},
+    testEnvironmentOptions: {
+        customExportConditions: ["node", "node-addons"],
+    },
+    // testEnvironment: 'node',
+    globals: {
+    },
 
 }
