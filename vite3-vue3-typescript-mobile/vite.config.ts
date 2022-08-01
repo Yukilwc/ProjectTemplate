@@ -6,10 +6,11 @@ import Components from "unplugin-vue-components/vite";
 import AutoImport from "unplugin-auto-import/vite";
 import { VantResolver } from "unplugin-vue-components/resolvers";
 import autoprefixer from "autoprefixer";
+import { visualizer } from "rollup-plugin-visualizer";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  console.log("==========env", mode);
+  console.log("==========env", mode,env);
 
   return {
     plugins: [
@@ -32,6 +33,7 @@ export default defineConfig(({ command, mode }) => {
         dts: true,
         resolvers: [VantResolver()],
       }),
+      visualizer()
     ],
     resolve: {
       alias: [
