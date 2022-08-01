@@ -36,6 +36,9 @@ const onRefresh = () => {
 const toastClick = () => {
   Toast("提示");
 };
+console.log("log");
+console.warn("warn");
+console.error("error");
 </script>
 
 <style scoped lang="scss">

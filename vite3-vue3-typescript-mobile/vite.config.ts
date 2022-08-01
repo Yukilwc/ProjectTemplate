@@ -9,7 +9,7 @@ import autoprefixer from "autoprefixer";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  console.log("==========env", env);
+  console.log("==========env", mode);
 
   return {
     plugins: [
@@ -78,6 +78,9 @@ export default defineConfig(({ command, mode }) => {
         },
         // css: { charset: false }, // 解决 warning: "@charset" must be the first rule in the file
       },
+    },
+    esbuild: {
+      drop: mode === "production" ? ["console", "debugger"] : [],
     },
   };
 });
