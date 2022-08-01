@@ -39,6 +39,7 @@ const toastClick = () => {
 console.log("log");
 console.warn("warn");
 console.error("error");
+console.log("env",import.meta.env.VITE_API_BASE);
 </script>
 
 <style scoped lang="scss">
