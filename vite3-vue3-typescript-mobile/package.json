@@ -27,6 +27,7 @@
     "@vitejs/plugin-vue": "^3.0.0",
     "@vue/test-utils": "^2.0.2",
     "autoprefixer": "^10.4.7",
+    "jsdom": "^20.0.0",
     "postcss": "^8.4.14",
     "postcss-pxtorem": "^6.0.0",
     "rollup-plugin-visualizer": "^5.7.1",
