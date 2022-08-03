@@ -9,7 +9,7 @@ import autoprefixer from "autoprefixer";
 import { visualizer } from "rollup-plugin-visualizer";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
-  const env = loadEnv(mode, './env', "");
+  const env = loadEnv(mode, "./env", "");
   console.log("==========env", env.VITE_API_BASE);
 
   return {
@@ -33,7 +33,7 @@ export default defineConfig(({ command, mode }) => {
         dts: true,
         resolvers: [VantResolver()],
       }),
-      visualizer()
+      visualizer(),
     ],
     resolve: {
       alias: [
@@ -84,6 +84,10 @@ export default defineConfig(({ command, mode }) => {
     esbuild: {
       drop: mode === "production" ? ["console", "debugger"] : [],
     },
-    envDir:"./env"
+    envDir: "./env",
+    test: {
+      globals: true,
+      environment: "jsdom",
+    },
   };
 });

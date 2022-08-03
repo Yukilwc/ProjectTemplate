@@ -13,6 +13,7 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "baseUrl": ".",
+    "types": ["@types","vitest/globals"],
     "paths": {
       "@/*": ["src/*"]
     }
