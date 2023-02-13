@@ -1,11 +1,11 @@
 <template>
+  <button @click="langSwitch">切换语言</button>
   <div class="iframe-container" @click="handleClick">
     <div class="iframe-wrapper">
       <iframe
         ref="iframeTest"
         id="iframe-test"
-        src="https://sales.tungee.com/enterprise-details/37622fb78a853e5b/enterprise-information/basic-information"
-        :onload="iframeLoad"
+        :src="lang === 'cn' ? base + '?lang=cn' : base + '?lang=en'"
       ></iframe>
       <!-- <div class="iframe-cover" @click="handleCoverClick"></div> -->
     </div>
@@ -15,18 +15,30 @@
 <script lang="ts" setup>
 let iframeTest = ref<HTMLIFrameElement | null>(null);
 onMounted(() => {});
+const base = "http://192.168.3.29:8182/publicRatesEmbededPage";
+const lang = ref("cn");
+const langSwitch = () => {
+  if (lang.value === "cn") lang.value = "en";
+  else lang.value = "cn";
+};
 const iframeLoad = () => {
   if (!iframeTest.value) return;
   console.log("==========iframeTest", iframeTest.value.contentWindow?.document);
   if (iframeTest.value.contentWindow) {
     iframeTest.value.contentWindow.document.body.onclick = handleClick;
   }
-  window.addEventListener("message", (e:MessageEvent) => {
+  window.addEventListener("message", (e: MessageEvent) => {
     console.log("==========window.addEventListener message", e);
   });
-  iframeTest.value.contentWindow?.addEventListener("message", (e:MessageEvent) => {
-    console.log('==========iframeTest.value.contentWindow?.addEventListener',e)
-  });
+  iframeTest.value.contentWindow?.addEventListener(
+    "message",
+    (e: MessageEvent) => {
+      console.log(
+        "==========iframeTest.value.contentWindow?.addEventListener",
+        e
+      );
+    }
+  );
 };
 const handleClick = (e: MouseEvent) => {
   console.log("==========handleClick ", e);
@@ -42,10 +54,14 @@ const handleCoverClick = (e: MouseEvent) => {
   position: relative;
   display: flex;
   justify-content: center;
+  background-color: #f8f9fd;
+  // background-color: #fff;
+  width: 100%;
   .iframe-wrapper {
     position: relative;
+    width: 100%;
     #iframe-test {
-      width: 80vw;
+      width: 100%;
       height: 100vh;
       border: none;
       //   pointer-events: none;
