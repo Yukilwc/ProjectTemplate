@@ -1,10 +1,13 @@
 <template>
   <div class="about">
     <h1>This is an about page</h1>
+    <div class='text'>
+      text
+    </div>
   </div>
 </template>
 
-<style>
+<style lang="scss">
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
@@ -12,4 +15,11 @@
     align-items: center;
   }
 }
+.about {
+  .text {
+    font-size: 30px;
+    color:red;
+  }
+}
+
 </style>
