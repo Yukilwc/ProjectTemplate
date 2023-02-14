@@ -18,12 +18,14 @@
     "js-cookie": "^3.0.1",
     "pinia": "^2.0.28",
     "qs": "^6.11.0",
+    "ramda": "^0.28.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.11.12",
+    "@types/ramda": "^0.28.23",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "@vue/test-utils": "^2.2.6",
