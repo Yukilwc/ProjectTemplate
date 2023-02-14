@@ -1,0 +1,156 @@
+/* 服务端渲染项目使用 */
+@media only screen and (min-width: 320px) {
+  html {
+    font-size: 32px !important
+  }
+}
+
+@media only screen and (min-width: 330px) {
+  html {
+    font-size: 33px !important
+  }
+}
+
+@media only screen and (min-width: 340px) {
+  html {
+    font-size: 34px !important
+  }
+}
+
+@media only screen and (min-width: 345px) {
+  html {
+    font-size: 34.5px !important
+  }
+}
+
+@media only screen and (min-width: 350px) {
+  html {
+    font-size: 35px !important
+  }
+}
+
+@media only screen and (min-width: 355px) {
+  html {
+    font-size: 35.5px !important
+  }
+}
+
+@media only screen and (min-width: 360px) {
+  html {
+    font-size: 36px !important
+  }
+}
+
+@media only screen and (min-width: 365px) {
+  html {
+    font-size: 36.5px !important
+  }
+}
+
+@media only screen and (min-width: 370px) {
+  html {
+    font-size: 37px !important
+  }
+}
+
+@media only screen and (min-width: 375px) {
+  html {
+    font-size: 37.5px !important
+  }
+}
+
+@media only screen and (min-width: 380px) {
+  html {
+    font-size: 38px !important
+  }
+}
+
+@media only screen and (min-width: 385px) {
+  html {
+    font-size: 38.5px !important
+  }
+}
+
+@media only screen and (min-width: 390px) {
+  html {
+    font-size: 39px !important
+  }
+}
+
+@media only screen and (min-width: 395px) {
+  html {
+    font-size: 39.5x !important
+  }
+}
+
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 40px !important
+  }
+}
+
+@media only screen and (min-width: 405px) {
+  html {
+    font-size: 40.5px !important
+  }
+}
+
+@media only screen and (min-width: 410px) {
+  html {
+    font-size: 41px !important
+  }
+}
+
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 41.4px !important
+  }
+}
+
+@media only screen and (min-width: 420px) {
+  html {
+    font-size: 42px !important
+  }
+}
+
+@media only screen and (min-width: 425px) {
+  html {
+    font-size: 42.5px !important
+  }
+}
+
+@media only screen and (min-width: 430px) {
+  html {
+    font-size: 43px !important
+  }
+}
+
+@media only screen and (min-width: 435px) {
+  html {
+    font-size: 43.5px !important
+  }
+}
+
+@media only screen and (min-width: 440px) {
+  html {
+    font-size: 44px !important
+  }
+}
+
+@media only screen and (min-width: 450px) {
+  html {
+    font-size: 45px !important
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 48px !important
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  html {
+    font-size: 54px !important
+  }
+}
