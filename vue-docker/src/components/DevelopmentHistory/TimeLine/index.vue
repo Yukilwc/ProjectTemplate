@@ -76,7 +76,7 @@ const initSwiper = () => {
     // Optional parameters
     direction: "horizontal",
     loop: false,
-    speed:800,
+    speed: 800,
     // slidesPerView: "auto",
     spaceBetween: 100,
     on: {
@@ -93,7 +93,7 @@ const initSwiper = () => {
         // slide.addClass("ani-slide");
         for (let i = 0; i < s.slides.length; i++) {
           if (s.slides[i].classList.contains("swiper-slide-prev")) {
-            // s.slides[i].classList.remove("opacity-animate");
+            s.slides[i].classList.remove("opacity-animate");
           }
           //   console.log("==========s.slides[i].classList", s.slides[i].classList);
         }
@@ -212,8 +212,10 @@ const doEmit = () => {
       width: 182px;
       .swiper-wrapper {
         width: 100%;
+        position: static;
         .swiper-slide {
           width: 100%;
+          opacity: 1;
           .is-pre {
             // opacity: 0;
           }
@@ -226,10 +228,12 @@ const doEmit = () => {
 
 <style lang="less">
 .opacity-animate {
-    transition: all 800ms;
-    // opacity: 0;
-    transform: translateX(182px) !important;
-    position: relative;
-    z-index:10;
+  transition: all 800ms;
+  opacity: 0 !important;
+  transform: translateX(282px) !important;
+  transition-property: all !important;
+  // position: absolute !important;
+  // left: 0px;
+  // z-index:10;
 }
 </style>
