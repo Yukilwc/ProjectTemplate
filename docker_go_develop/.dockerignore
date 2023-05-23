@@ -1,0 +1,3 @@
+.vscode/
+Dockerfile.debug
+docker-compose-debug.yml
