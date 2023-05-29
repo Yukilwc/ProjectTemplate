@@ -3,8 +3,9 @@ package logic
 import (
 	"context"
 
-	"api/internal/svc"
-	"api/internal/types"
+	"blog/api/internal/svc"
+	"blog/api/internal/types"
+	"blog/rpc/user/types/user"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +24,11 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 	}
 }
 
-func (l *LoginLogic) Login(req *types.ReqLoginUser) (resp *types.RespLoginUser, err error) {
-	// todo: add your logic here and delete this line
+func (l *LoginLogic) Login(req *types.ReqLoginUser) (*types.RespLoginUser, error) {
+	resp, err := l.svcCtx.UserRpc.Login(l.ctx, &user.ReqLoginUser{Username: req.Username, Password: req.Password})
+	if err != nil {
+		return nil, err
+	}
 
-	return
+	return &types.RespLoginUser{Token: resp.Token}, nil
 }

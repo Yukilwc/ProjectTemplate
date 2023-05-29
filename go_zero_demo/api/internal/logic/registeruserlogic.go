@@ -3,8 +3,8 @@ package logic
 import (
 	"context"
 
-	"api/internal/svc"
-	"api/internal/types"
+	"blog/api/internal/svc"
+	"blog/api/internal/types"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -24,9 +24,7 @@ func NewRegisterUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Regi
 }
 
 func (l *RegisterUserLogic) RegisterUser(req *types.ReqAddUser) (resp *types.MsgResp, err error) {
-	res := types.MsgResp{
-		Code: 1,
-		Msg:  "success",
-	}
-	return &res, nil
+	// todo: add your logic here and delete this line
+
+	return
 }
