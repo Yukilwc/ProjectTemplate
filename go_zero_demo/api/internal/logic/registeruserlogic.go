@@ -5,6 +5,7 @@ import (
 
 	"blog/api/internal/svc"
 	"blog/api/internal/types"
+	"blog/rpc/user/types/user"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +24,17 @@ func NewRegisterUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Regi
 	}
 }
 
-func (l *RegisterUserLogic) RegisterUser(req *types.ReqAddUser) (resp *types.MsgResp, err error) {
-	// todo: add your logic here and delete this line
-
-	return
+func (l *RegisterUserLogic) RegisterUser(req *types.ReqAddUser) (*types.MsgResp, error) {
+	resp, err := l.svcCtx.UserRpc.Add(l.ctx, &user.ReqAddUser{
+		Username: req.Username,
+		Password: req.Password,
+		Email:    req.Email,
+	})
+	if err != nil {
+		return nil, err
+	}
+	return &types.MsgResp{
+		Code: resp.Code,
+		Msg:  resp.Msg,
+	}, nil
 }

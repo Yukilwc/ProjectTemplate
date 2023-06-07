@@ -26,9 +26,10 @@ func NewLoginLogic(ctx context.Context, svcCtx *svc.ServiceContext) *LoginLogic 
 }
 
 func (l *LoginLogic) Login(in *user.ReqLoginUser) (*user.RespLoginUser, error) {
+	l.Logger.Info("Login in login logic", in)
 	one, err := l.svcCtx.Model.FindOneByUsername(l.ctx, in.Username)
 	if err != nil {
-		return nil, errors.Wrapf(err, "find user %s", in.Username)
+		return nil, errors.Wrapf(err, "查找用户名: %s，", in.Username)
 	}
 	if one.Password != in.Password {
 		return nil, fmt.Errorf("user or password is invalid")

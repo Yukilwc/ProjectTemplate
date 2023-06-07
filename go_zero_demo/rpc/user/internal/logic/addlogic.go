@@ -2,7 +2,9 @@ package logic
 
 import (
 	"context"
+	"database/sql"
 
+	"blog/rpc/model"
 	"blog/rpc/user/internal/svc"
 	"blog/rpc/user/types/user"
 
@@ -24,7 +26,17 @@ func NewAddLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddLogic {
 }
 
 func (l *AddLogic) Add(in *user.ReqAddUser) (*user.MsgResp, error) {
-	// todo: add your logic here and delete this line
+	_, err := l.svcCtx.Model.Insert(l.ctx, &model.ZeroUser{
+		Username: in.Username,
+		Password: in.Password,
+		Email:    sql.NullString{Valid: true, String: in.Email},
+	})
+	if err != nil {
+		return nil, err
+	}
 
-	return &user.MsgResp{}, nil
+	return &user.MsgResp{
+		Code: 1,
+		Msg:  "注册成功",
+	}, nil
 }
