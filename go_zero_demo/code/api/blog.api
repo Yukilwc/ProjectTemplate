@@ -1,0 +1,53 @@
+syntax = "v1"
+
+info (
+	title: "blog"
+	desc: "blog api"
+	author: "Misaka"
+	email: "misaka1033@gmail.com"
+)
+
+type ReqLoginUser {
+	Username string `json:"username"`
+	Password string `json:"password"`
+}
+
+type UserInfo {
+	Id       int64  `json:"id"`
+	Email    string `json:"email"`
+	Username string `json:"username"`
+}
+
+type RespLoginUser {
+	Code     int64     `json:"code"`
+	Msg      string    `json:"message"`
+	Token    string    `json:"token"`
+	UserInfo *UserInfo `json:"userinfo"`
+}
+
+type ReqAddUser {
+	Username string `json:"username"`
+	Email    string `json:"email"`
+	Password string `json:"password"`
+}
+
+type MsgResp {
+	Code int64  `json:"code"`
+	Msg  string `json:"message"`
+}
+
+type UserId {
+	Id int64 `json:"id"`
+}
+
+service blog-api {
+
+	@handler Login
+	post /users/login(ReqLoginUser) returns(RespLoginUser)
+
+	@handler RegisterUser
+	post /users/register(ReqAddUser) returns(MsgResp)
+
+	@handler GetUser
+	post /users/info(UserId) returns(UserInfo)
+}

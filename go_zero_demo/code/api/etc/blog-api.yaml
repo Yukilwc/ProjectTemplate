@@ -1,0 +1,10 @@
+Name: blog-api
+Host: 0.0.0.0
+Port: 8000
+# User rpc服务
+UserRpc:
+  Etcd:
+    Hosts:
+      - etcd:2379
+    # Key是在etcd服务中的key值
+    Key: user.rpc
