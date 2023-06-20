@@ -3,15 +3,22 @@ services:
   frontend:
     image: docker_vue_develop_image
     container_name: docker_vue_develop_container
+    restart: always
     build:
       context: .
       dockerfile: ./dockerfiles/Dev.dockerfile
     volumes:
       - ".:/app"
-      - "./node_modules:/app/node_modules"
+      - "my_node_modules:/app/node_modules"
     ports:
-      - "5173:3000"
+      - "5173:5173"
     environment:
       - HOST=0.0.0.0
       - CHOKIDAR_USEPOLLING=true
-    command: ["npm","run","dev"]
+
+    stdin_open: true # 打开标准输入，可以接受外部输入
+    tty: true
+ 
+volumes:
+  my_node_modules:
+    driver: local
