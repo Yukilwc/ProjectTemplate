@@ -7,6 +7,13 @@ const routes: RouteRecordRaw[] = [
       showNavbar: true,
     },
   },
+{
+    path: "/swiperDemo",
+    component: () => import("@/pages/swiperDemo/index.vue"),
+    meta: {
+      showNavbar: false,
+    },
+  },
   {
     path: "/second",
     component: () => import("@/pages/second/index.vue"),
